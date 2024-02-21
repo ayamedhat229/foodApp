@@ -38,7 +38,7 @@ $foodApp-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .auth-form{
-  width:40%;
+  width:60%;
   background-color: #fff;
   border-radius: 16px;
   padding: 10px 0px ;
@@ -54,9 +54,34 @@ button{
   border-radius: 12px;
   border:none;
   color:#fff;
-  padding: 10px 8px ;
+
   &.main{
     background-color: #4AA35A;
     color: white;
+    padding: 10px 8px ;
   }
+  &.second{
+    background-color: #4AA35A;
+    color: white;
+    padding: 10px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: auto;
+  }
+}
+.alert-danger{
+  background-color: rgb(225, 96, 95) !important;
+ 
+}
+a{
+  text-decoration-line: none;
+  color: black;
+}
+.show-password{
+  position: absolute;
+  right: 5px;
+ top:20px;
+  transform: translateY(-50%);
 }

@@ -1,0 +1,21 @@
+<div class="container w-100 py-5">
+<h2 mat-dialog-title>Hi</h2>
+<mat-dialog-content>
+   
+  <form [formGroup]="verfiycode">
+    <div class="input-group mb-2">
+        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen" style="color: #8391A1;"></i></span>
+        <input formControlName="email" type="text" class="form-control" placeholder="Enter your E-mail" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-2">
+        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen" style="color: #8391A1;"></i></span>
+        <input formControlName="code" type="text" class="form-control" placeholder="code" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </form>
+  
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-between">
+  <button mat-button (click)="onNoClick()" class="btn">close</button>
+  <button mat-button class="btn" [mat-dialog-close]="verfiycode.value" cdkFocusInitial>ok</button>
+</mat-dialog-actions>
+</div>

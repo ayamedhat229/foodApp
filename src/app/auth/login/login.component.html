@@ -4,18 +4,37 @@
             <img src="/../assets/images/logo.svg">
         </div>
        <div class="px-5">
-        <h2>Login</h2>
+        <h2>Log In</h2>
         <p>Welcome back! Please enter your details</p>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen" style="color: #8391A1;"></i></span>
-            <input type="text" class="form-control" placeholder="Enter your E-mail" aria-label="Username" aria-describedby="basic-addon1">
+            <input formControlName="email" type="text" class="form-control" placeholder="Enter your E-mail" aria-label="Username" aria-describedby="basic-addon1">
+            <div *ngIf="loginForm.controls['email'].errors&&loginForm.controls['email'].touched" class=" w-100 p-1">
+              <p class="text-danger" *ngIf="loginForm.controls['email'].errors['required']">email is required</p>
+              <p class="text-danger" *ngIf="loginForm.controls['email'].errors['email']">email should be valid mail</p>
           </div>
-          <div class="input-group mb-3">
+          </div>
+          <div class="input-group mb-3 ">
             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock" style="color: #8391A1;"></i></span>
-            <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            <input class="position-relative" formControlName="password" [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            <a class="show-password" (click)="hide = !hide">
+              <i class="fa-solid" [class]="hide ? 'fa-eye-slash' : 'fa-eye'"></i>
+            </a>
+            <div *ngIf="loginForm.controls['password']?.errors && loginForm.controls['password']?.touched" class="w-100 p-1">
+              <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['required']">Password is required</p>
+              <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['pattern']">Password should start with a capital letter</p>
+            </div>
+            
           </div>
-          <button class="w-100 main">Login</button>
+          
+          <div class="d-flex justify-content-between pb-3">
+          <a [routerLink]="['/auth/register']">Register Now?</a>
+          <a [routerLink]="['/auth/forgetPassword']">Forget Password?</a>
+        </div>
+          <button [disabled]="loginForm.invalid" class="w-100 main">Login</button>
+        </form>
        </div> 
+     
     </div>
-
 </section>
