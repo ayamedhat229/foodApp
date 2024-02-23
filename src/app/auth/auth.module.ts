@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
+
 @NgModule({
   declarations: [
     AuthComponent,
@@ -26,7 +27,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     ReactiveFormsModule,
     RouterModule,
     NgxDropzoneModule,
-    SharedModule,
     FormsModule
   ]
 })

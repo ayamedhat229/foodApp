@@ -23,12 +23,16 @@ console.log(data)
 this._AuthService.userLogin(data.value).subscribe(
  {
   next:(res)=>{
+    
     console.log(res);
+    localStorage.setItem('userToken', res.token)
+    this._AuthService.getProfile();
   },error:(err:any)=>{
     console.log(err)
     this.toastr.error('try again', 'login not sucess');
   },complete:()=>{
     this.toastr.success('Hello', 'login sucess');
+    this._Router.navigateByUrl('/dashboard')
   }, 
 },
 )
