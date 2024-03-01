@@ -46,11 +46,13 @@ export class AuthService implements OnInit{
     }
   }
   logOut(){
-    localStorage.removeItem('userName');
+   /* localStorage.removeItem('userName');
     localStorage.removeItem('userRole');
-    localStorage.removeItem('userToken');
+    localStorage.removeItem('userToken');*/
     this._Router.navigateByUrl('/auth/login')
+    localStorage.clear()
   }
+  
  ngOnInit(): void {
    
  } 

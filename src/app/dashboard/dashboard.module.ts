@@ -6,7 +6,8 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { AppModule } from '../app.module';
+
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { CategoriesComponent } from './categories/categories.component';
     NavbarComponent,
     DashboardComponent,
     HomeComponent,
-    CategoriesComponent,
+  
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
+  
   ]
 })
 export class DashboardModule { }

@@ -39,13 +39,13 @@ export class SidebarComponent {
     },
     {
       text: 'Recipes',
-      link: 'home',
+      link: '/dashboard/admin/recipes',
       icon: 'fa-solid fa-icons',
       isActive: this.isAdmin(),
     },
     {
       text: 'Categories',
-      link: '/dashboard/categories',
+      link: '/dashboard/admin/categories',
       icon: 'fa-regular fa-calendar-days',
       isActive: this.isAdmin(),
     },

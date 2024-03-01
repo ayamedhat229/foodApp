@@ -11,6 +11,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { VerfiyAccountComponent } from './auth/verfiy-account/verfiy-account.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgxDropzoneModule,
     MatDialogModule,
     ReactiveFormsModule,
+    SharedModule,
     FormsModule,
     ToastrModule.forRoot({
       closeButton:true,

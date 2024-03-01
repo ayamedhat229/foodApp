@@ -22,8 +22,7 @@ onSubmit(data:FormGroup){
 console.log(data)
 this._AuthService.userLogin(data.value).subscribe(
  {
-  next:(res)=>{
-    
+  next:(res)=>{    
     console.log(res);
     localStorage.setItem('userToken', res.token)
     this._AuthService.getProfile();
@@ -32,7 +31,7 @@ this._AuthService.userLogin(data.value).subscribe(
     this.toastr.error('try again', 'login not sucess');
   },complete:()=>{
     this.toastr.success('Hello', 'login sucess');
-    this._Router.navigateByUrl('/dashboard')
+    this._Router.navigateByUrl('/dashboard/home')
   }, 
 },
 )
